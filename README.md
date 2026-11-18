@@ -77,6 +77,19 @@ if st.button("Run 5 Pillars Scan", type="primary"):
         except Exception:
             pass
         progress.progress((i + 1) / len(WATCHLIST))
+        if not results_df.empty:
+        # Clean, readable table with styled green/red percentage changes
+        display_df = results_df[["Ticker", "Name", "Price", "Change", "RelVol", "FloatM"]].copy()
+        display_df.columns = ["Ticker", "Company", "Price ($)", "Day Gain (%)", "Rel Volume (x)", "Float (M)"]
+
+        # Function to color green for positive, red for negative
+        def color_gain_loss(val):
+            color = "#00C805" if val > 0 else "#FF5000" if val < 0 else "inherit"
+            return f"color: {color}; font-weight: 600;"
+
+        styled_df = display_df.style.map(color_gain_loss, subset=["Day Gain (%)"])
+        
+        st.dataframe(styled_df, use_container_width=True, hide_index=True)
 
     if results:
         results_df = pd.DataFrame(results).sort_values(by="Rel Volume (x)", ascending=False)
