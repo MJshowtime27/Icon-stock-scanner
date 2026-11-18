@@ -1,0 +1,31 @@
+# 🎯 5 Pillars Stock Scanner & AI Trading Coach
+
+A real-time, automated stock scanner and trading education suite built with Python, Streamlit, Plotly, and Google Gemini AI. 
+
+This app is custom-configured to scan for low-float momentum setups using a strict set of 5 trading pillars.
+
+---
+
+## 📈 Your 5 Pillars of Trading
+1. **Momentum:** The stock must be up at least **5%** on the day.
+2. **Relative Volume:** Relative volume must be at least **3x** normal average volume.
+3. **News / Catalyst:** Live news headlines are pulled into the inspector to verify market catalysts.
+4. **Price Range:** Stock price must trade between **$2.00 and $20.00** for high-percentage growth potential.
+5. **Low Float:** Available share float must be **under 20 million shares**.
+
+---
+
+## 🚀 Features
+* **Automated 30-Minute Refresh:** Quietly updates market data and re-runs the scanner automatically throughout the trading day.
+* **Interactive Stock Inspector:** Click any matched stock to view interactive candlestick charts (Intraday, 1-Month, 3-Month), company country/industry profiles, and live news.
+* **AI Trading Coach Tab:** Built-in AI assistant powered by Gemini to help you learn market mechanics, candlestick patterns, and risk management (like stop-losses and 1:2 risk-to-reward ratios).
+
+---
+
+## 🛠️ Local Installation & Running
+If you want to run or test this scanner locally on your computer:
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git](https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git)
+   cd YOUR-REPO-NAME
